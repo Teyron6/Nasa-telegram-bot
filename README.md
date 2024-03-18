@@ -30,4 +30,5 @@ Python main.py
 SLEEP_TIME= Промежуток времкни через которое будет постится картинка 
 NASA_API_KEY= Аpi полученный от Nasa 
 TG_CHAT_ID= Айди вашего тг канала
+TG_TOKEN= Токен, полученный от Bot_father
 ```
