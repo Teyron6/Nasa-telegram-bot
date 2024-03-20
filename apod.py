@@ -13,10 +13,10 @@ def extract_link(url):
     return extantion, file_name
 
 
-def get_apod_img():
+def get_apod_img(nasa_api_key):
     url_apod = 'https://api.nasa.gov/planetary/apod'
     params = {
-        'api_key' : os.environ['API_KEY'],
+        'api_key' : nasa_api_key,
         'count' : 5,
     }
     response = requests.get(url_apod, params=params)
@@ -31,7 +31,8 @@ def get_apod_img():
 
 
 def main():
-    get_apod_img()
+    nasa_api_key = os.environ.get('NASA_API_KEY')
+    get_apod_img(nasa_api_key)
 
 
 if __name__ == '__main__':
