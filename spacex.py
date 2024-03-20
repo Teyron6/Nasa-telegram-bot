@@ -1,6 +1,5 @@
 import requests
 from download_img import download_img
-import random
 import argparse
 
 
