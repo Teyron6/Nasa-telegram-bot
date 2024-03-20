@@ -12,12 +12,11 @@ def bot(tg_token, tg_chat_id, sleep_time):
         folders = ['spacex', 'apod', 'epic']
         folder = random.choice(folders)
         files = listdir(folder)
-        random.shuffle(files)
-        for file in files:
-            path = os.path.join(folder, file)
-            with open(path, 'rb') as f:
-                bot.send_document(tg_chat_id, document=f)
-            sleep(sleep_time)
+        file = random.choice(files)
+        path = os.path.join(folder, file)
+        with open(path, 'rb') as f:
+            bot.send_document(tg_chat_id, document=f)
+        sleep(sleep_time)
 
 
 def main():
