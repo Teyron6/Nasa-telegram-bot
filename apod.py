@@ -2,6 +2,7 @@ import os
 import requests
 from download_img import download_img
 from urllib.parse import urlparse, unquote
+from dotenv import load_dotenv
 
 
 def extract_link(url):
@@ -26,11 +27,12 @@ def get_apod_imgs(nasa_api_key):
     for url in  urls:
         link = url['hdurl']
         extention,filename = extract_link(link)
-        filepath = os.path.join('apod', f'{filename}{extention}')
+        filepath = os.path.join('images', f'{filename}{extention}')
         download_img(link, filepath)
 
 
 def main():
+    load_dotenv()
     nasa_api_key = os.environ.get('NASA_API_KEY')
     get_apod_imgs(nasa_api_key)
 

@@ -18,7 +18,7 @@ def get_epic_imgs(nasa_api_key):
         epic_date = datetime.datetime.fromisoformat(epic_date).strftime('%Y/%m/%d')
         epic_img = url['image']
         epic_link = f'https://api.nasa.gov/EPIC/archive/natural/{epic_date}/png/{epic_img}.png'
-        path = os.path.join('epic', f'{epic_img}.png')
+        path = os.path.join('images', f'{epic_img}.png')
         download_img(epic_link, path, params)
 
 

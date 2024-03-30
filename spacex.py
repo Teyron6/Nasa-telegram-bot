@@ -3,13 +3,13 @@ from download_img import download_img
 import argparse
 
 
-def fetch_spacex_last_launch(launch_id):
+def fetch_spacex_last_launches(launch_id):
     link = f'https://api.spacexdata.com/v5/launches/{launch_id}'
     response = requests.get(link)
     response.raise_for_status()
     urls = response.json()['links']['flickr']['original']
     for url_num, url in enumerate(urls):
-        path = f'spacex/spacex_{url_num}.jpeg'
+        path = f'images/spacex_{url_num}.jpeg'
         download_img(url, path)
 
 
