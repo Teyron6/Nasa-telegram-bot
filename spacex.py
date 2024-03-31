@@ -24,7 +24,7 @@ def main():
         help='Укажите ID запуска SpaceX, с которого можно загрузить фотографии.'
     )
     args = parser.parse_args()
-    fetch_spacex_last_launch(args.launch_id)
+    fetch_spacex_last_launches(args.launch_id)
 
 
 if __name__ == '__main__':
